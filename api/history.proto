@@ -1,0 +1,20 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/richardcase/proto_file/pkg/history/pb";
+
+message History {
+    string id = 1;
+    string provider = 2;
+    string identity = 3;
+    google.protobuf.Timestamp created = 4;
+    string configfile = 5;
+    string alias = 6;
+
+    message Flag {
+        string name = 1;
+        string value = 2;
+    }
+
+    repeated Flag flags = 7;
+}
